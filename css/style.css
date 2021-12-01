@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Oswald:wght@200;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(90px, 90px) auto;
+    grid-template-rows: 60px auto;
+    grid-template-areas: "header header"
+                            "menu main";
+    transition: all .3s ease;
+}
+
+.container.active {
+    grid-template-columns: minmax(300px, 18%) auto;
+}
+
+.header {
+    grid-area: header;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    grid-template-areas: "logo search account";
+}
+
+.header .container-logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+
+.header .container-logo .menu-button {
+    border: none;
+    padding: 10px;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.header .container-logo .menu-button:hover {
+    background-color: #e7e7e7;
+}
+
+.header .container-logo .logo .fas {
+    background: #ff0000;
+    padding: 7px 12px;
+    border-radius: 4px;
+    font-size: 8px;
+    color: #fff;
+    position: relative;
+    top: -4px;
+}
+
+.header .container-logo .logo {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+}
+
+.header .search-bar {
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .search-bar input {
+    min-width: 60%;
+    padding: 0 15px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header .search-bar button {
+    height: 35px;
+    border: 1px solid #ccc;
+    border-left: none;
+    color: #545454;
+    background: #f8f8f8;
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+.header .search-bar button:hover {
+    background: #f5f5f5;
+}
+
+.header .account {
+    grid-area: account;
+    display: flex;
+    align-items: center;
+}
+
+.header .account button {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    padding: 7px 12px;
+    border-radius: 100px;
+    color: #828282;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.header .account button:hover {
+    background: #e7e7e7;
+}
+
+.header .account .avatar {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.header .account .avatar img {
+    vertical-align: top;
+    width: 100%;
+    border-radius: 100px;
+}
+
+.menu {
+    grid-area: menu;
+    overflow: hidden;
+}
+
+.menu a {
+    display: block;
+    padding: 12px 35px;
+    color: #000;
+    min-width: 800px;
+}
+
+.menu a:hover {
+    background: #e5e5e5;
+}
+
+.menu a.active {
+    background: #e5e5e5;
+    font-weight: bold;
+}
+
+.menu .fas {
+    color: #606060;
+    margin-right: 32px;
+    width: 20px;
+    text-align: center;
+}
+
+.menu a.active .fas {
+    color: #ff0000;
+}
+
+.menu hr {
+    margin: 15px 0;
+    border: 1px solid #dfdfdf;
+}
+
+.main {
+    grid-area: main;
+    background-color: #f9f9f9;
+    padding: 40px;
+}
+
+.main .title {
+    margin-bottom: 20px;
+}
+
+.main .videos-collection {
+    display: grid;
+    gap: 20px 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main .videos-collection .video {
+    width: 100%;
+    display: block;
+}
+
+.main .videos-collection .video img {
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .main .videos-collection {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .header .container-logo .logo span {
+        display: none;
+    }
+
+    .header .search-bar input {
+        min-width: 80%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main .videos-collection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-rows: auto;
+    }
+
+    .header {
+        padding: 20px;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        grid-template-areas: "logo account"
+                            "search search";
+    }
+
+    .header .search-bar input {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .header .container-logo .logo span {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 473px) {
+    .main .videos-collection {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .header .container-logo .logo span {
+        display: none;
+    }
+}
+
+.temp {
+    background-color: #000;
+}
