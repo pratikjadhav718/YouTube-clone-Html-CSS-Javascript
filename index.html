@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Clone</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container active">
+        <header class="header">
+            <div class="container-logo">
+                <button id="menu-button" class="menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="" class="logo">
+                    <i class="fas fa-play"></i> <span>Youtube</span>
+                </a>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="search" id="video">
+                <button type="submit" onclick="searchVideos()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="account">
+                <button>
+                    <i class="fas fa-upload"></i>
+                </button>
+                <button>
+                    <i class="fas fa-th"></i>
+                </button>
+                <button>
+                    <i class="fas fa-bell"></i>
+                </button>
+
+                <a href="" class="avatar">
+                    <img src="img/profile-cv.png" alt="">
+                </a>
+            </div>
+        </header>
+
+        <nav class="menu">
+            <a href="" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href=""><i class="fas fa-fire"></i> Trending</a>
+            <a href=""><i class="fas fa-star"></i> Subscriptions</a>
+            
+            <hr>
+
+        </nav>
+
+        <main class="main">
+            <!-- <h3 class="title">Videos Recommendation</h3> -->
+            <div class="videos-collection" id="videos_div">
+                
+                
+                <!-- <a href="#" class="video">
+                    <img src="https://via.placeholder.com/500x282?text=Placeholder" alt="">
+                </a> -->
+                
+            </div>
+        </main>
+    </div>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
